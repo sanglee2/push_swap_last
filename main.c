@@ -6,7 +6,7 @@
 /*   By: sanglee2 <sanglee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 14:29:49 by sanglee2          #+#    #+#             */
-/*   Updated: 2023/04/28 23:20:49 by sanglee2         ###   ########.fr       */
+/*   Updated: 2023/04/29 05:36:12 by sanglee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ int main(int ac, char *av[])
  
     // 두 deq 초기세팅
 	// 초기화 <- 인수를 넣어 deq 구성한다는 의미
-    deq_a = init_deq(ac, av);
+    deq_a = configuration_deq(ac, av);
     deq_b = NULL;
 
     // deq_a의 크기 구하기 <- 정렬 전.
