@@ -6,9 +6,12 @@
 /*   By: sanglee2 <sanglee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 20:19:28 by sanglee2          #+#    #+#             */
-/*   Updated: 2023/04/29 18:11:32 by sanglee2         ###   ########.fr       */
+/*   Updated: 2023/04/29 18:38:02 by sanglee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
+#include <limits.h>
 
 /*t_deq *temp;
 temp = deq_a;
@@ -49,6 +52,66 @@ while (temp)
 	cur_loc++;
 }
 return (deq_a_loc); */
+
+
+
+// deq_b의 요소를 잡은 다음에 시작
+// deq_b에 대한 while문 안에 있는 상횡이 되는  거.
+// deq_a에 대해서만 반복문 돌아가는 상황
+int get_a_loc(t_deq* deq_a, int b_content) //deq_b_b_top_content)
+{
+	int deq_a_loc;
+	int cur_loc;
+	int min;
+	int min_a;
+	t_deq* temp;
+
+	deq_a_loc = 0;
+	cur_loc = 0;
+	min = 0;
+	min_a = INT_MAX;
+	temp = deq_a;
+
+	while (temp->a_top)
+	{
+		if (min > b_content - temp->a_top->content)
+		{
+			min = b_content - temp->a_top->content;
+			deq_a_loc = cur_loc;
+		}
+		temp->a_top = temp->a_top->next;
+		cur_loc++;
+	}
+	// 같을 경우가 있겠지만 괜찮을 거 같아.
+	if (min == 0)
+	{
+		temp = deq_a;
+		cur_loc = 0;
+		while(temp->a_top)
+		{
+			if (temp->a_top->content < min_a)
+			{
+				min_a = temp->a_top->content;
+				deq_a_loc = cur_loc;
+			}
+			temp->a_top = temp->a_top->next;
+			cur_loc++;
+		}
+	}
+	return (deq_a_loc);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
