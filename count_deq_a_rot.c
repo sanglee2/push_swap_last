@@ -6,7 +6,7 @@
 /*   By: sanglee2 <sanglee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 20:19:28 by sanglee2          #+#    #+#             */
-/*   Updated: 2023/04/29 05:05:03 by sanglee2         ###   ########.fr       */
+/*   Updated: 2023/04/29 18:11:32 by sanglee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,34 @@ while (temp)
 }
 return (deq_a_loc); */
 
-int get_a_loc(t_deq* deq_a)
-{
-	while (temp)
-	{
-		if (deq_a의 인자 > 
 
-	}
 
-}
+// // 나은 거 같지만 동일한 if문이 중복되서 별로
+// // 나중에 리팩토링으로 다시 한 번 시도해 볼 것
+// int get_a_loc(t_deq* deq_a)
+// {
+// 	while (temp)
+// 	{
+// 		if (deq_a의 인자 > deq_b의 인자)
+// 		{
+// 			if (deq_a의 인자 > deq_b의 인자 && deq_a의 인자 < 최소값이라고 생각하는 수)
+// 			{
+// 				최소값이라고 생각하는 수 = deq_a의 인자;
+// 				deq_a_loc = cur_loc;
+// 			}
+// 		}
+// 		else
+// 			if (deq_a의 인자 < 최소값이라고 생각하는 수) 
+			
+// 			{
+// 				최소값이라고 생각하는 수 = deq_a의 인자;
+// 				deq_a_loc = cur_loc;
+// 			}
+// 			temp = temp->next;
+// 			cur_loc++;
+// 	}
+// 	return (deq_a_loc);	
+// }
 
 
 
