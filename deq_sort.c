@@ -39,11 +39,11 @@ void    sort(t_deq *deq_a, t_deq *deq b)
 {
     if (deq_a->size == 1)
         return ;
-    else if (deq_a->size == 2)
+    else if (deq_a->size == 2 && !check_sort(deq_a))
         sort_two_element(deq_a);
-    else if (deq_a->size == 3)
+    else if (deq_a->size == 3 && !check_sort(deq_a))
         sort_three_element(deq_a);
-    else
+    else if (!check_sort(deq_a))
         greedy(deq_a, deq_b);
 }
 

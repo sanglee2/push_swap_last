@@ -1,53 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iterate_rotation.c                                 :+:      :+:    :+:   */
+/*   check_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanglee2 <sanglee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 18:56:10 by sanglee2          #+#    #+#             */
-/*   Updated: 2023/05/06 06:00:29 by sanglee2         ###   ########.fr       */
+/*   Created: 2023/05/05 21:33:03 by sanglee2          #+#    #+#             */
+/*   Updated: 2023/05/06 06:00:06 by sanglee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-iterate_ra(t_deq* deq_a, int a_loc)
+// 정렬이 되어있는지, 아닌지 항시 체크해주는 함수
+check_sort(t_deq *deq)
 {
-	while(a_loc)
+	t_deq *temp;
+
+	while(temp->a_top)
 	{
-		ra(deq_a);
-		a_loc--;
+		if (temp->a_top->content > temp->a_top->next->content)
+			return (0);
+		temp->a_top = temp->a_top->next;
 	}
-
-}
-
-iterate_rra(t_deq* deq_a, int a_loc)
-{
-	whiel(a_loc)
-	{
-		rra(deq_a);
-		a_loc--;
-	}
-
-}
-
-iterate_rb(t_deq* deq_b, int b_loc)
-{
-	while(b_loc)
-	{
-		rb(deq_b);
-		b_loc--;
-	}
-
-}
-
-iterate_rrb(t_deq* deq_b, int b_loc)
-{
-	while(b_loc)
-	{
-		rrb(deq_b);
-		b_loc--;
-	}
+	return (1);
 }

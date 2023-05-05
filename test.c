@@ -6,7 +6,7 @@
 /*   By: sanglee2 <sanglee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 10:16:46 by sanglee2          #+#    #+#             */
-/*   Updated: 2023/04/29 06:36:41 by sanglee2         ###   ########.fr       */
+/*   Updated: 2023/05/05 21:29:01 by sanglee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -290,6 +290,8 @@ int main()
 	// deq_a = configuration_deq(ac, av);
 	deq_print(deq_a);
 }
+
+
 
 
 

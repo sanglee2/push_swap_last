@@ -1,48 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   deq_size.c                                         :+:      :+:    :+:   */
+/*   find_min_loc.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanglee2 <sanglee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 19:16:22 by sanglee2          #+#    #+#             */
-/*   Updated: 2023/05/06 06:00:17 by sanglee2         ###   ########.fr       */
+/*   Created: 2023/05/06 01:47:56 by sanglee2          #+#    #+#             */
+/*   Updated: 2023/05/06 06:00:25 by sanglee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <limits.h>
 
-
-// t_deq에 노드 접근할 수 있는 방식을
-// a_top, b_top으로 따로 나눠놓다보니 각 노드의 접근이 힘들어.
-// 힘들어져.. 함수를 일단 2개로 나누는 생각
-int get_deq_a_size(t_deq *deq_a)
+int find_min_loc(t_deq* deq)
 {
 	t_deq* temp;
-	int size;
+	int min_a;
+	int min_loc;
+	int cur_loc;
 
-	temp = deq_a;
-	size = 0;
+	temp = deq;
+	min_a = INT_MAX;
+	cur_loc = 0;
+
+	// 순회를 할 수 있는 방법에는 여러가지가 있다.
+	// deq에 연관되어있는 array가 멤버로 담겨져 있고
+	// deq의 크기(size)값이 따로 저장이 되어있으면 가능하다.
+	// deq의 노드를 통한 순회
 	while (temp->a_top)
 	{
-		size++;
+		if (temp->a_top->content < min_a)
+		{
+			min_a = temp->a_top->content;
+			min_loc = cur_loc;
+		}
 		temp->a_top = temp->a_top->next;
+		cur_loc++;
 	}
-	return (size);
-}
-
-
-int get_deq_b_size(t_deq *deq_b)
-{
-	t_deq* temp;
-	int size;
-
-	temp = deq_b;
-	size = 0;
-	while (temp->b_top)
-	{
-		size++;
-		temp->b_top = temp->b_top->next;
-	}
-	return (size);
+	return (min_loc);
 }
