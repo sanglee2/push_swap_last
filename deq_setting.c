@@ -6,7 +6,7 @@
 /*   By: sanglee2 <sanglee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 21:50:51 by sanglee2          #+#    #+#             */
-/*   Updated: 2023/05/06 06:00:16 by sanglee2         ###   ########.fr       */
+/*   Updated: 2023/05/08 12:59:50 by sanglee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,26 @@ void pre_setting_deque(t_deq *deq_a, t_deq *deq_b)
 
 	// next로 옮겨진 경우를 생각해야 하나?
 	// a_top->next로 옮겨지는 게 힘듦. 힘들다.
-	while (deq_size > 6 && i < deq_size && count < deq_size / 2)
+	while (deq_size > 5 && i < deq_size && count < deq_size / 2)
 	{
+		// greedy 5개에 대해 호출 하는 함수.
+
 		if (deq_a->a_top->content, next일지 <= deq_size /2)
 		{
 			pb(deq_a, deq_b);
 			count++;
 		}
+		// 피봇보다 큰 얘 -> deq_b로 넘기기.
 		ra(deq_a);
 		i++;
 	}	
 
-	while (deq_size - count > 3)
-	{
-		pb(deq_a, deq_b);
-		count++;
-	}
+
+	// while (deq_size - count > 3)
+	// {
+	// 	pb(deq_a, deq_b);
+	// 	count++;
+	// }
 }
 
 // 끝나고 3개에 대한 정렬(sorting)이 이루어져야 함.
@@ -112,3 +116,62 @@ void last_setting_deque(t_deq* deq_a)
 // 	}
 // }
 
+
+// void pre_setting_deque(t_deq *deq_a, t_deq *deq_b)
+// {
+// 	int deq_size;
+// 	int count;
+// 	int i;
+
+// 	deq_size = get_deq_a_size(deq_a);
+// 	count = 0;
+// 	i = 0;
+// 	// 하나하나 순회 돌면서 pivot보다 작을 경우 넘길지 말지 결정
+
+
+// 	// deque 크기가 6이하이면
+// 	// 3개가 될 때 까지 인수들 모두 
+// 	// deq_b에 옮겨주면 될 일이니까
+
+// 	// next로 옮겨진 경우를 생각해야 하나?
+// 	// a_top->next로 옮겨지는 게 힘듦. 힘들다.
+
+// 	// 5개 정렬 만들기
+// 	// 4개 - 
+// 	// 
+// 	// 3개 4개 5개 -- 나머지.
+// 	// 3개 남김.
+// 	// a- 3개 
+// 	// deq_b 1개, 2개
+// 	// 개수만큼 그리디??
+// 	// 
+
+
+// 	// 3개 
+// 	// 3개 초과. 4개 5개
+// 	// else
+
+	
+// 	// 그래서 2개가 필요하다!
+// 	// deq_b에서 위, 아래 정렬.
+// 	while (deq_size > 5 && i < deq_size && count < deq_size / 2)
+// 	{
+// 		// greedy 5개에 대해 호출 하는 함수.
+
+// 		if (deq_a->a_top->content, next일지 <= deq_size /2)
+// 		{
+// 			pb(deq_a, deq_b);
+// 			count++;
+// 		}
+// 		// 피봇보다 큰 얘 -> deq_b로 넘기기.
+// 		ra(deq_a);
+// 		i++;
+// 	}	
+
+
+// 	// while (deq_size - count > 3)
+// 	// {
+// 	// 	pb(deq_a, deq_b);
+// 	// 	count++;
+// 	// }
+// }

@@ -1,41 +1,91 @@
 
 #include"push_swap.h"
 
+// void sort_two_element(t_deq *deq_a)
+// {
+//     int *lst;
+
+//     lst = deq_a->content;
+//     if (lst > (lst + 1))
+//         sa(deq_a);
+//     return ;
+// }
+
+
+// 포인터로 접근이 지금 어려운 점
 void sort_two_element(t_deq *deq_a)
 {
-    int *lst;
+    t_node *temp;
 
-    lst = deq_a->content;
-    if (lst > (lst + 1))
+    temp = deq_a->a_top;
+    if (temp->content > temp->next->content)
         sa(deq_a);
     return ;
 }
 
+
+// void sort_three_element(t_deq *deq_a)
+// {
+//     int *lst;
+
+//     lst = deq_a->content;
+//     if (lst > (lst + 1) && (lst + 1) < (lst + 2) && (lst + 2) < lst)
+//         sa(deq_a);
+//     else if (lst < (lst + 1) && (lst + 1) < (lst + 2) && (lst + 2) > lst)
+//     {
+//         sa(deq_a);
+//         rra(deq_a);
+//     }
+//     else if (lst > (lst + 1) && (lst + 1) < (lst + 2) && (lst + 2) > lst)
+//         ra(deq_a);
+//     else if (lst < (lst + 1) && (lst + 1) > (lst + 2) && (lst + 2) < lst)
+//     {
+//         sa(deq_a);
+//         ra(deq_a);
+//     }
+//     else if (lst < (lst + 1) && (lst + 1) > (lst + 2) && (lst + 2) > lst)
+//         rra(deq_a);
+// }
+
 void sort_three_element(t_deq *deq_a)
 {
-    int *lst;
+    t_node *temp;
 
-    lst = deq_a->content;
-    if (lst > (lst + 1) && (lst + 1) < (lst + 2) && (lst + 2) < lst)
+    int first;
+    int second;
+    int third;
+
+    temp = deq_a->a_top;
+    if (temp->content > temp->next->content && 
+    temp->next->content < temp->next->next->content &&
+    temp->next->next->content > temp->content)
         sa(deq_a);
-    else if (lst < (lst + 1) && (lst + 1) < (lst + 2) && (lst + 2) > lst)
+    else if (temp->content > temp->next->content &&
+    temp->next->content > temp->next->next->content &&
+    temp->next->next->content < temp->content)
     {
         sa(deq_a);
         rra(deq_a);
     }
-    else if (lst > (lst + 1) && (lst + 1) < (lst + 2) && (lst + 2) > lst)
+    else if (temp->content > temp->next->content &&
+    temp->next->content < temp->next->next->content &&
+    temp->next->next->content < temp->content)
         ra(deq_a);
-    else if (lst < (lst + 1) && (lst + 1) > (lst + 2) && (lst + 2) < lst)
+    else if (temp->content < temp->next->content &&
+    temp->next->content > temp->next->next->content &&
+    temp->next->next->content > temp->content)
     {
         sa(deq_a);
         ra(deq_a);
     }
-    else if (lst < (lst + 1) && (lst + 1) > (lst + 2) && (lst + 2) > lst)
+    // 2 3 1
+    else if (temp->content < temp->next->content &&
+    temp->next->content > temp->next->next->content &&
+    temp->next->next->content < temp->content)
         rra(deq_a);
 }
 
-
-void    sort(t_deq *deq_a, t_deq *deq b)
+void    sort(t_deq *deq_a, t_deq *deq_b)
 {
     if (deq_a->size == 1)
         return ;
