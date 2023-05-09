@@ -6,7 +6,7 @@
 /*   By: sanglee2 <sanglee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 20:19:28 by sanglee2          #+#    #+#             */
-/*   Updated: 2023/05/06 06:00:07 by sanglee2         ###   ########.fr       */
+/*   Updated: 2023/05/09 14:11:44 by sanglee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,13 @@ int get_a_loc(t_deq* deq_a, int b_content) //deq_b_b_top_content)
 
 	while (temp->a_top)
 	{
-		if (min > b_content - temp->a_top->content)
+		if (b_content > temp->a_top->content)
 		{
-			min = b_content - temp->a_top->content;
-			deq_a_loc = cur_loc;
+			if (min > b_content - temp->a_top->content)
+			{
+				min = b_content - temp->a_top->content;
+				deq_a_loc = cur_loc;
+			}
 		}
 		temp->a_top = temp->a_top->next;
 		cur_loc++;

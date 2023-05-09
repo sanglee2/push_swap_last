@@ -6,12 +6,12 @@
 /*   By: sanglee2 <sanglee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 02:52:43 by sanglee2          #+#    #+#             */
-/*   Updated: 2023/05/08 11:28:41 by sanglee2         ###   ########.fr       */
+/*   Updated: 2023/05/09 10:56:18 by sanglee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <limits.h>
+//#include <limits.h>
 
 int find_max_idx(t_deq *deq)
 {
